@@ -128,23 +128,27 @@ function testPositions(stager, len, debug) {
 
 // 14. Uncomment the lines below.
 
-stager.stage('stage 1');
-stager.stage('stage 2');
-stager.stage('stage 3');
-
-stager.setDefaultStepRule(ngc.stepRules.WAIT);
-sstate = stager.getState();
-node = ngc.getClient();
-node.verbosity = 1;
-node.setup('plot', sstate);
-node.createPlayer({ id: 'testid' });
-node.game.start();
+// stager.stage('stage 1');
+// stager.stage('stage 2');
+// stager.stage('stage 3');
+// 
+// stager.setDefaultStepRule(ngc.stepRules.WAIT);
+// sstate = stager.getState();
+// node = ngc.getClient();
+// node.verbosity = 1;
+// node.setup('plot', sstate);
+// node.createPlayer({ id: 'testid' });
+// node.game.start();
 
 // Pay attention to the line:
 // stager.setDefaultStepRule(ngc.stepRules.WAIT);
 
 // Step rules determine what to do next when a step is _done_.
 // ngc.stepRules.WAIT just says to wait.
+
+// Try it out. Why there is so much information printed to screen?
+// Hint: node.verbosity controls the amount of logged information.
+// Keep it like this for the moment, you will need it.
 
 // Comment the line: 
 // stager.setDefaultStepRule(ngc.stepRules.WAIT);
@@ -156,9 +160,12 @@ node.game.start();
 // Hint: console.log(stager.getDefaultCallback().toString());
 // What is node.done doing?
 
-// Check out:
+// Set the function below as default step callback.
+// function dscb() { console.log(node.getCurrentStepObj().id); }
+// And set node.verbosity = -1000;
+
+// Check out more predefined step rules:
 // https://github.com/nodeGame/nodegame-client/blob/master/lib/modules/stepRules.js
-// for more step rules.
 
 // Important! Different step rules can be applied to
 // different stages and steps to let a player advance through some steps,
