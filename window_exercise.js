@@ -32,15 +32,21 @@ node.window.generateFrame();
 // Hint: W.loadFrame('game.htm');
 // Question: what happens with W.loadFrame('http://google.com') ?
 
-// 5. Make the DIV element 'dictator' visible.
+// 5. Control the behavior of the UI
+// W.disableRightClick();
+// W.enableRightClick();
+// W.promptOnleave();
+// W.restoreOnleave();
+
+// 6. Make the DIV element 'dictator' visible.
 // Hint: W.getElementById('dictator') and check the style property.
 
-// 6. Access the input box and set it to 100.
+// 7. Access the input box and set it to 100.
 // Hint: .value = 100
 
-// 7. Check what W.lockScreen(); and W.unlockScreen() do.
+// 8. Check what W.lockScreen(); and W.unlockScreen() do.
 
-// 7. Access the button in the page and add and onclick
+// 9. Access the button in the page and add and onclick
 // event handler. When the button is clicked make a call to
 // node.done({value: x});
 // where x is the current value of the input.
