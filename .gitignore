@@ -3,6 +3,7 @@
 .idea
 Session.vim
 
+nodegame-client
 /tests/
 /examples/test/*
 

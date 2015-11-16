@@ -5,17 +5,19 @@
  *
  */
 
+// Creating a class called Foo. Notice the capital F.
 
 function Foo() {
 
     this.a = 1;
     this.b = 2;
 
-
     this.mymethod = function(a) {
         console.log('I will not print what you say!');
     };
 }
+
+// Notice there is no ; after function declaration.
 
 Foo.prototype.mymethod = function(a) {
     console.log(a);
@@ -38,7 +40,6 @@ Foo.prototype.mymethod(10); // 10;
 Foo.prototype.anotherMethod(); // undefined;
 
 
-
 // Create a new object.
 
 var foo = new Foo();
@@ -57,8 +58,6 @@ catch(e) {
     console.log('It was an error: ', e);
 }
 
-
-
 var foo2 = new Foo();
 
 foo2.anotherMethod = function() {
@@ -69,16 +68,22 @@ foo2.anotherMethod();
 
 foo.anotherMethod();
 
-foo2.thirdMethod.a = 10;
+foo2.thirdMethod.a = 'I am a property of foo2.thirdMethod';
 
-console.log(foo.thirdMethod.a);
+console.log('On foo: ', foo.thirdMethod.a);
+
+console.log(Foo.prototype.thirdMethod);
 
 
-function FooInherited() {
+function FooInherited() {    
     this.c = 10;
 }
 
-FooInherited.prototype = new Foo();
-FooInherited.constructor = FooInherited;
+IFoo.prototype = new Foo();
+IFoo.constructor = IFoo;
+
+var fooI = new IFoo();
+
+
 
 
